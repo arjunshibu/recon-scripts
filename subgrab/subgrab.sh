@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ "$#" != 1 ]
 then
-    echo Usage: $0 example.com
+    echo Usage: ./subgrab.sh example.com
     exit -1
 fi
 crtsh() {
