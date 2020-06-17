@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ "$#" != 1 ]
+then
+    echo Usage: $0 example.com
+    exit -1
+fi
 crtsh() {
     curl -s https://crt.sh/\?q\=$1\&output\=json | jq | awk -F'"' '/value/{print $4}' | sed 's/*.//g;s/\\n/\n/g'
 }
