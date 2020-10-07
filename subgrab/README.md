@@ -1,1 +1,1 @@
-This script uses public APIs. The results are processed with Regex to give the final output.
+A subdomain enumeration script which uses some public APIs.
