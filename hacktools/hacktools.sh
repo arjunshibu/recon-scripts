@@ -34,19 +34,25 @@ do
     wget -q --show-progress --directory-prefix=$toolname https://github.com$(curl -s $(curl -s https://github.com/$tool/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*64' | cut -d'"' -f2)
 done
 
+echo -e 'Installing Go tools\n'
+
 for tool in $gotools
 do
-    go get -v gitub.com/$tool
+    go get -v github.com/$tool
 done
+
+echo -e 'Cloning repositories\n'
 
 for tool in $clonetools
 do
     git clone https://github.com/$tool
 done
 
+echo -e 'Installing other tools\n'
+
 # Manual
 sudo apt install wfuzz
 gem install wpscan
-wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2)
+wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
 
 echo -e '\nSetup finished. Install releases by extracting them...'
