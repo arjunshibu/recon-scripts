@@ -8,7 +8,7 @@ echo "                               by 0xsegf  "
                                         
 echo -e 'Initial setup\n'
 sudo apt update
-sudo apt install python3 python3-pip python2 golang
+sudo apt install -y python3 python3-pip python2 golang
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2
 sudo snap install ruby --classic
 
@@ -57,7 +57,7 @@ done
 echo -e '\nInstalling other tools\n'
 
 # Manual
-sudo apt install wfuzz
+sudo apt install -y wfuzz
 gem install wpscan
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
 
