@@ -15,13 +15,12 @@ sudo snap install ruby --classic
 # Download latest release
 releases='
 projectdiscovery/subfinder projectdiscovery/httpx projectdiscovery/shuffledns projectdiscovery/nuclei projectdiscovery/dnsx
-projectdiscovery/naabu lc/gau OWASP/Amass ffuf/ffuf sensepost/gowitness jaeles-project/gospider michenriksen/aquatone
-KathanP19/Gxss 
+projectdiscovery/naabu lc/gau OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone KathanP19/Gxss 
 '
 
 # Go Gettables
 gotools='
-arjunshibu/gcmd hakluke/hakrawler hakluke/hakrevdns tomnomnom/assetfinder tomnomnom/unfurl tomnomnom/gron tomnomnom/httprobe
+arjunshibu/gcmd hakluke/hakrawler hakluke/hakrevdns jaeles-project/gospider tomnomnom/assetfinder tomnomnom/unfurl tomnomnom/gron tomnomnom/httprobe
 tomnomnom/waybackurls haccer/subjack eth0izzle/shhgit avineshwar/slurp incogbyte/shosubgo BishopFox/smogcloud
 '
 
