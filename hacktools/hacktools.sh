@@ -6,7 +6,7 @@ echo " / _  / _ \`/ __/  '_// / / _ \/ _ \/ (_-<"
 echo "/_//_/\_,_/\__/_/\_\/_/  \___/\___/_/___/ "
 echo "                               by 0xsegf  "
                                         
-# Initial setup
+echo -e 'Initial setup\n'
 sudo apt update
 sudo apt install python3 python3-pip python2 golang
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2
