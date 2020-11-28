@@ -36,12 +36,12 @@ done
 
 for tool in $gotools
 do
-    go get -v $tool
+    go get -v gitub.com/$tool
 done
 
 for tool in $clonetools
 do
-    git clone $tool
+    git clone https://github.com/$tool
 done
 
 # Manual
