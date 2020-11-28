@@ -8,7 +8,7 @@ echo "                               by 0xsegf  "
                                         
 echo -e 'Initial setup\n'
 sudo apt update
-sudo apt install -y python3 python3-pip python2 golang
+sudo apt install -y python3 python3-pip python2 golang unzip
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2
 sudo snap install ruby --classic
 
