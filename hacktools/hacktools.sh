@@ -34,18 +34,18 @@ do
     wget -q --show-progress --directory-prefix=$toolname https://github.com$(curl -s $(curl -s https://github.com/$tool/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*64' | cut -d'"' -f2)
 done
 
-for tool in gotools
+for tool in $gotools
 do
     go get -v $tool
 done
 
-for tool in clonetools
+for tool in $clonetools
 do
     git clone $tool
 done
 
 # Manual
-pip install wfuzz
+sudo apt install wfuzz
 gem install wpscan
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2)
 
