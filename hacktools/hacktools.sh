@@ -31,7 +31,7 @@ OWASP/joomscan securing/DumpsterDiver sa7mon/S3Scanner infosec-au/altdns codingo
 gwen001/github-search SpiderLabs/HostHunter andresriancho/mongo-objectid-predict
 '
 
-echo -e 'Downloading releases\n'
+echo -e '\nDownloading releases\n'
 
 for tool in $releases
 do
