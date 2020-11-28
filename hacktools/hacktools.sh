@@ -34,21 +34,21 @@ do
     wget -q --show-progress --directory-prefix=$toolname https://github.com$(curl -s $(curl -s https://github.com/$tool/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*64' | cut -d'"' -f2)
 done
 
-echo -e 'Installing Go tools\n'
+echo -e '\nInstalling Go tools\n'
 
 for tool in $gotools
 do
     go get -v github.com/$tool
 done
 
-echo -e 'Cloning repositories\n'
+echo -e '\nCloning repositories\n'
 
 for tool in $clonetools
 do
     git clone https://github.com/$tool
 done
 
-echo -e 'Installing other tools\n'
+echo -e '\nInstalling other tools\n'
 
 # Manual
 sudo apt install wfuzz
