@@ -15,7 +15,7 @@ sudo snap install ruby --classic
 # Download latest release
 releases='
 projectdiscovery/subfinder projectdiscovery/httpx projectdiscovery/shuffledns projectdiscovery/nuclei projectdiscovery/dnsx
-projectdiscovery/naabu lc/gau OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone KathanP19/Gxss 
+projectdiscovery/naabu lc/gau lc/subjs OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone KathanP19/Gxss
 '
 
 # Go Gettables
