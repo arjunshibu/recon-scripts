@@ -35,7 +35,6 @@ echo -e '\nDownloading releases\n'
 for tool in $releases
 do
     toolname=$(echo $tool | cut -d'/' -f2)
-    mkdir $toolname
     wget -q --show-progress --directory-prefix=$toolname https://github.com$(curl -s $(curl -s https://github.com/$tool/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*64' | cut -d'"' -f2)
 done
 
