@@ -5,7 +5,7 @@ echo "  / // /__ _____/ /_/_  __/__  ___  / /__ "
 echo " / _  / _ \`/ __/  '_// / / _ \/ _ \/ (_-<"
 echo "/_//_/\_,_/\__/_/\_\/_/  \___/\___/_/___/ "
 echo "                               by 0xsegf  "
-                                        
+
 echo -e 'Initial setup\n'
 sudo apt update
 sudo apt install -y python3 python3-pip python2 golang nodejs npm unzip
@@ -15,19 +15,19 @@ sudo snap install ruby --classic
 # Download latest release
 releases='
 projectdiscovery/subfinder projectdiscovery/httpx projectdiscovery/shuffledns projectdiscovery/nuclei projectdiscovery/dnsx
-projectdiscovery/naabu lc/gau lc/subjs OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone KathanP19/Gxss
+projectdiscovery/naabu lc/gau lc/subjs OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone hahwul/dalfox
 '
 
 # Go Gettables
 gotools='
-arjunshibu/gcmd hakluke/hakrawler hakluke/hakrevdns jaeles-project/gospider tomnomnom/assetfinder tomnomnom/unfurl tomnomnom/gron tomnomnom/httprobe
-tomnomnom/waybackurls haccer/subjack eth0izzle/shhgit avineshwar/slurp incogbyte/shosubgo BishopFox/smogcloud
+arjunshibu/gcmd hakluke/hakrawler hakluke/hakrevdns jaeles-project/gospider tomnomnom/unfurl tomnomnom/gron tomnomnom/httprobe
+haccer/subjack avineshwar/slurp BishopFox/smogcloud
 '
 
 # Git clone
 clonetools='
-OWASP/joomscan securing/DumpsterDiver sa7mon/S3Scanner infosec-au/altdns codingo/Interlace hisxo/gitGraber nsonaniya2010/SubDomainizer
-gwen001/github-search SpiderLabs/HostHunter andresriancho/mongo-objectid-predict
+OWASP/joomscan securing/DumpsterDiver sa7mon/S3Scanner codingo/Interlace hisxo/gitGraber nsonaniya2010/SubDomainizer
+gwen001/github-search SpiderLabs/HostHunter andresriancho/mongo-objectid-predict devanshbatham/ParamSpider
 '
 
 echo -e '\nDownloading releases\n'
@@ -55,7 +55,11 @@ done
 
 echo -e '\nInstalling other tools\n'
 
+# TODO
+# Add docker installation for eth0izzle/shhgit
+
 # Manual
+pip install dnsgen
 sudo apt install -y wfuzz
 gem install wpscan
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
