@@ -15,7 +15,7 @@ sudo snap install ruby --classic
 # Download latest release
 releases='
 projectdiscovery/subfinder projectdiscovery/httpx projectdiscovery/shuffledns projectdiscovery/nuclei projectdiscovery/dnsx
-projectdiscovery/naabu lc/gau lc/subjs OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone hahwul/dalfox
+projectdiscovery/naabu lc/gau lc/subjs OWASP/Amass ffuf/ffuf sensepost/gowitness michenriksen/aquatone
 '
 
 # Go Gettables
@@ -62,6 +62,7 @@ echo -e '\nInstalling other tools\n'
 pip install dnsgen
 sudo apt install -y wfuzz
 gem install wpscan
+mkdir dalfox && wget -q --show-progress --directory-prefix=dalfox https://github.com$(curl -s $(curl -s https://github.com/hahwul/dalfox/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*amd64.*gz' | cut -d'"' -f2)
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
 
 echo -e '\nSetup finished. Install releases by extracting them...'
