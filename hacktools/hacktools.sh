@@ -59,7 +59,7 @@ echo -e '\nInstalling other tools\n'
 
 # Manual
 pip install dnsgen
-sudo apt install -y wfuzz
+sudo apt install -y wfuzz jq
 sudo gem install wpscan
 mkdir dalfox && wget -q --show-progress --directory-prefix=dalfox https://github.com$(curl -s $(curl -s https://github.com/hahwul/dalfox/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*amd64.*gz' | cut -d'"' -f2)
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
