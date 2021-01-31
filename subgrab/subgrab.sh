@@ -38,7 +38,7 @@ threatcrowd() {
 sources='crtsh alienvault bufferover hackertarget rapiddns sublist3r threatcrowd'
 
 echo "Finding subdomains for $1"
-echo
+
 for cmd in $sources
 do
     res="$res $($cmd $1)"
