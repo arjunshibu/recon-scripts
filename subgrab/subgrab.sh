@@ -34,8 +34,11 @@ sublist3r() {
 threatcrowd() {
     curl -s https://www.threatcrowd.org/searchApi/v2/domain/report/\?domain\=$1 | jq | awk -F'"' '/\.'$1'/{print $2}' | sed 's/ //g'
 }
+subdomainfinder() {
+    curl -s https://subdomainfinder.c99.nl/scans/2020-00-00/$1 | grep -hoiE "[0-9]+[09]+[0-9]+[0-9]\-[0-9]+[0-9]\-[0-9]+[0-9]" | sort -u | while read history;do curl -s https://subdomainfinder.c99.nl/scans/$history/$1 | grep -hoiE "((.\-|.\.|.\_)[a-zA-Z0-9._-]|[a-zA-Z0-9._-])+\.$1";done | grep -v "\*"
+}
 
-sources='crtsh alienvault bufferover hackertarget rapiddns sublist3r threatcrowd'
+sources='crtsh alienvault bufferover hackertarget rapiddns sublist3r threatcrowd subdomainfinder'
 
 echo "Finding subdomains for $1"
 
@@ -45,4 +48,5 @@ do
 done
 
 res=$(echo $res | sed 's/ /\n/g' | sort -u)
+
 [ -z "$2" ] && echo $res | sed 's/ /\n/g' || echo $res | sed 's/ /\n/g' | tee $2
