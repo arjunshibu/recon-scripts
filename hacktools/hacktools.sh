@@ -8,9 +8,8 @@ echo "                               by 0xsegf  "
 
 echo -e 'Initial setup\n'
 sudo apt update
-sudo apt install -y python3 python3-pip python2 golang nodejs npm unzip
+sudo apt install -y python3 python3-pip python2 golang unzip ruby
 curl https://bootstrap.pypa.io/get-pip.py | sudo python2
-sudo snap install ruby --classic
 
 # Download latest release
 releases='
@@ -57,6 +56,7 @@ echo -e '\nInstalling other tools\n'
 # Manual
 pip install dnsgen
 sudo apt install -y wfuzz jq
+sudo apt install -y nodejs npm
 sudo npm i -g terser
 wget -q --show-progress --directory-prefix=dalfox https://github.com$(curl -s $(curl -s https://github.com/hahwul/dalfox/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -iE 'download.*linux.*amd64.*gz' | cut -d'"' -f2)
 wget -q --show-progress https://github.com$(curl -s $(curl -s https://github.com/danielmiessler/SecLists/releases/latest | grep 'a href' | cut -d'"' -f2) | grep -E 'archive.*tar.gz' | cut -d'"' -f2) -O SecLists.tgz
